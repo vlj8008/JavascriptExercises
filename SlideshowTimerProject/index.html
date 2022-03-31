@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+  <link rel="stylesheet" type="text/css" href="CSS/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<!--Countdown Timer-->
+
+<p>How many seconds would you like to set your alarm for?</p>
+<input id="seconds" value="" /> <!-- this creates a box for the user to input the amount of seconds they would like to countdown for-->
+<!-- also assigns the attribute "value" to this user input. -->
+<button onclick="countdown()">Click here!</button>
+<!--calls the function called "count down" when user clicks on button-->
+<p id="timer"></p>
+
+<!--Slide show bar-->
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div> 
+    <img src="img/program.jpeg" style="width: 100%;"><!--specifies inline style for an element. The width in percent, is in relation to the width of the containing
+      block ie 100% means the image takes up 100% of the containing block. This inline style overrides all other styling-->
+      <div class="text">Programming</div>
+  </div>
+
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img/meeting.jpeg" style="width:100%;">
+    <div class="text">Project Management</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img/keyboard.jpeg" style="width:100%;">
+    <div class="text">Technology</div>
+  </div>
+
+
+  <!--Next and previous buttons-->
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- clicking on the button activates the plusSlides function and this makes program go back one slide -->
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>  <!-- clicking on the button activates the plusSlides function and this makes program go forward one slide -->
+
+</div>
+
+<!--the three dots at the bottom of the slideshow-->
+<br>
+<div style="text-align: center">
+  <span class="dot" onclick="currentSlide(1)"></span> <!--span is inline container used to mark up a part of a text or part of document. Class dot makes a circle-->
+  <span class="dot" onclick="currentSlide(2)"></span> <!-- clicking on the dot activates the currentSlide function and goes to the respective slide (ie picture)-->
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script src="JS/main.js"></script> <!-- script tag placed here so when page loads the images will appear. If script tag is placed in the <head> section the images don't appear.  -->
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p id="XML_Example"></p> 
+
+    <script>
+
+        var XML_Parser, XML_Document; //declaring two variables
+
+        var Movie = "<movie>" + // creating a variable called "Movie" and giving string value
+            "<title> Phar Lap </title>" +
+            "<director> Spielberg </director>" +
+            "<starring> Liam Neeson </starring>"+
+            "<year>1990</year>"
+            "</movie>";
+
+        XML_Parser = new DOMParser(); // creating an XML parser (to "parse" means to "analyze")
+
+        XML_Document = XML_Parser.parseFromString(Movie, "text/xml");//the parser creates a new XML object using the string values
+
+        document.getElementById("XML_Example").innerHTML = //this tells computer to get the element with ID "XML_Example" and change the element to:
+        XML_Document.getElementsByTagName("year")[0].childNodes[0].nodeValue; //go into the XML document and get the value with the tag "year"
+        // the .nodeValue returns the value of the node.
+
+
+
+    </script>
+
+
+
+</body>
+</html>

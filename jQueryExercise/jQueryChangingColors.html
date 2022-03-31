@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+    <script>
+        $(document).ready(function () { //"$" stands for jQuery. The ready function means as soon as the html document loads append to the html
+            //element the text: "Basic jQuery, and then para 1, 2, 3". Note that the "\" means "go down to the next line". We use a single
+            //quotation mark with the ID as using a double quotation mark would cause problems as we have code already enclosed within double quotation marks. 
+            $("html").append(
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuery</h1>\
+                                <p id='1'> Paragraph 1</p>\
+                                <p id='2'> Paragraph 2</p>\
+                                <p id='3'> Paragraph 3</p>\
+                        </div>\
+                    </div>\
+                </body>"
+            );
+
+            $("#2").css({ "color": "red" }); // # sign means target "id=2". The action that is performed on the target is "property name and value" .
+            // meaning make the color of para 2 red. 
+            $("#3").click(function () { // The .click() triggers an event if the selector (paragraph 3) is clicked. 
+            $('h1').hide(); //the event is that the element "h1" (the title) will be hidden. 
+            });
+        });
+
+    </script>
+
+</html>
+
+
+            

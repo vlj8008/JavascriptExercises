@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>  </title>
+		<meta charset="utf-8">
+
+        <script src="react.js"></script> <!--referencing the React library code-->
+        <script src="react-dom.js"></script>
+                         
+	</head>
+	
+	<body>
+
+        <div id="My_React_Code"></div>
+
+        <script>
+
+            var Counter = React.createClass({ //declaring the variable "Counter" and making it equal to the class component 
+            
+                render: function(){ //"render" means the process of transforming components in to DOM nodes. 
+                    var time_Passed = Math.round(this.props.time_Passed / 100); //"Math.round" rounds value in rounded brackets to the nearest integer
+                    var seconds_Passed = time_Passed / 10 + (time_Passed % 10 ? '': '.0'); // ? is a conditional operator, it is checking to see
+                    //if there is a remainder left if the time passed is divided by 10.
+                    //that checks for whether or not condition is true. If there is a remainder The ":" is shorthand for "else"
+                    var text = 'My React code started running ' + 
+                    seconds_Passed + ' seconds ago!';
+                    return React.DOM.p(null, text); //"return" returns value. 
+                }
+            });
+
+            var counter_factory = React.createFactory(Counter); //a function that generates a factory (object that can create other objects). This 
+            //factory is creating a counter
+
+            var start_Counting = new Date().getTime(); //"new" keyword creates a new empty object. The object will get the date and time
+
+            setInterval(function(){ //"setInterval()" is a method that evaluates an expression at specified intervals (milliseconds).
+                ReactDOM.render( //used to render a React component. 
+                    counter_factory({time_Passed: new Date().getTime() - start_Counting}),
+                    document.getElementById('My_React_Code') //go in to the HTML document and get the element with the ID "My_React_Code"
+                );
+            }, 500); //Do the above every 500 milliseconds
+
+
+
+        </script>
+
+
+
+
+	
+	</body>
+	
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.mySlides {display:none;} /*slides are completely removed*/
+
+h2.title{
+    text-align: left;
+}
+
+#sticky{
+position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background-color: green;
+  border: solid, black;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+
+
+/*the popup form hidden by default*/
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<h2 class="title">Vicky's Photographic Services</h2>
+
+<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides" src="img_mountains.jpg" style="width:100%">
+  <img class="mySlides" src="img_nature.jpg" style="width:100%">
+  <img class="mySlides" src="img_snow.jpg" style="width:100%">
+</div>
+
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Sign Up</h1>
+  
+      <label for="email"><b>First Name</b></label>
+      <input type="text" placeholder="First Name" name="email" required>
+  
+      <label for="psw"><b>Second Name</b></label>
+      <input type="password" placeholder="Second Name" name="psw" required>
+  
+      <button type="submit" class="btn">Sign Up</button>
+      <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+
+<button id="sticky" class="open-button" onclick="openForm()">Click here to sign up for our mailing list</button>
+
+
+
+<p>
+
+    I specialise in nature photography <br>
+    and more ...<br>
+</p>
+
+
+<script>
+    var myIndex = 0; //set variable "myIndex" to 0
+    carousel();// call the carousel function below:
+    
+    function carousel() {
+      var i; //declare a variable "i" which usually means Iteration
+      var x = document.getElementsByClassName("mySlides"); //var x equals get the photo. 
+      for (i = 0; i < x.length; i++) {//for loop. Assigned variable "i" value of 0. 0 is less than the 
+      //slide length so do not display photo 0.
+        x[i].style.display = "none";  
+      }
+    
+      myIndex++; // "++" adds one to "myIndex"
+      if (myIndex > x.length) {myIndex = 1}  //if "myIndex" is greater than the slide length (3) make
+      //myIndex to 1
+      x[myIndex-1].style.display = "block"; //display this element 
+    
+      setTimeout(carousel, 3000); // JS method which calls a function (called carousel) every 5000 milliseconds. 
+    }
+
+    function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+</body>
+</html>

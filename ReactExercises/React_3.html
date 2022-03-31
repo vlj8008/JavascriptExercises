@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>  </title>
+		<meta charset="utf-8">
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+                    
+	</head>
+	
+	<body>
+	
+        <div id='JSX'></div>
+
+        <script type="text/babel"> //this tag specifies the type of script. "Babel" is a compiler that allows us to use JSX.
+        
+        class Greeting extends React.Component{ //"extends" keyword is used to create a child class of a parent class. The child
+			//inherits all the methods from another class. This is useful for code reusability.
+            render() { //this method describes to the browswer what to render on the screen. 
+                return <h1> Hello World ! </h1> //return "Hello World" on the screen
+            }
+        }
+
+        ReactDOM.render (<Greeting/>, document.getElementById('JSX'))//Render function takes two arguments, the HTML code, and the HTML element. In our case
+			// the first is "Greeting", and the second is the element with the id "JSX". In other words display
+			// "Hello World!".
+        
+        
+        </script>
+	</body>
+	
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <title> </title>
+        <meta charset="utf-8">
+        <script src="JS/main.js"></script>
+
+
+</head>
+
+<body>
+
+        <h1>Here is some basic Arithmetic:</h1>
+
+        <button ondblclick="addition_function()">Double Click here!</button>
+        <!--using "ondblclick" means user has to double click before the addition function event handler happens. -->
+
+        <p id="Math"></p>
+        <!--This paragraph has been given the unique ID of "Math" so JS can insert results in to this specific paragraph-->
+
+        <p>And here is an example of more basic arithmetic</p>
+
+        <button onclick="sub_function(); mult_function(); div_function(); multiple_math(); mod_function(); neg_op();">
+                Click here!</button>
+        <!--These are the functions that get activated when the user clicks on the button-->
+
+        <p id="sub"></p>
+
+        <p id="mult"></p>
+
+        <p id="div"></p>
+
+        <p id="multiple"></p>
+
+        <p id="mod"></p>
+
+
+        <p id="neg"></p>
+
+        <p><strong>Click here to see a the number "5.63" count up one and count down one:</strong></p>
+
+        <button onclick="inc_op(); dec_op();"> Click Here!</button>
+
+        <p id="incr"></p>
+
+        <p id="decr"></p>
+
+        <h3>Random Number Generator:</h3>
+
+        <button onclick="random_gen();">Click Here!</button>
+
+        <p id="random"></p>
+
+        <p><strong>Click button to round number 2.5 upwards to its nearest integer</strong></p>
+
+        <button onclick="ceil_funct();">Click Here!</button>
+
+        <p id="ceil_funct"></p>
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Basic AJAX Demo</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+
+			<h2>Get The Latest Content:</h2>
+			<div class='content' id="content">
+				<input type="button" class="button" value="Get Content" id="btn_content" onclick="getContent();"/>
+			</div>
+
+		<script type="text/javascript">
+			// Step 1: Create XML Http Request object to get data from the server. "new"
+            //means creating a new instance. The "XMLHttp request" method is used to exchange data with the server. "ajax" is our made 
+            //up name for the variable. 
+
+            var ajax = new XMLHttpRequest();
+
+            //Step 2: Call on AJAX open method which initializes a newly created request.
+            
+            ajax.open('GET', 'content.html'); //this method  Parameters are firstly the HTTP request method 
+            //(eg "GET", "POST" etc) and the url (the server file location). 
+
+            //Step 3: Define the AJAX callback, meaning telling browser what to do when it 
+            //gets the information from the server. 
+
+            ajax.onreadystatechange = function(){ //the "onreadystatechange" property defines a function to be executed when the readyState changes. 
+                if (ajax.readyState== 4){ //if the readyState is equal to four execute the code below: (ready state Holds the status of the XMLHttpRequest.
+                    //0: request not initialized
+                    //1: server connection established
+                    //2: request received
+                    //3: processing request
+                    //4: request finished and response is ready)
+                    document.getElementById('content').innerHTML = ajax.responseText; //put the response text from the server into our HTML
+                    //document element with the ID "content"
+                }
+            }
+
+            //Step 4: Call on the AJAX send method to get the data on the server that
+            //we want sent to us. THis will get triggered when the person clicks on the "Get latest content" button. 
+
+            function getContent(){
+                ajax.send(); // the send method, sends the request to the server.
+                document.getElementById('btn_content').style.display= 'none'; //this removes the button (that says get the latest content).
+            }
+
+		</script>
+    </body>
+</html>

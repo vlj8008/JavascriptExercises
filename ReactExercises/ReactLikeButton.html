@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>  </title>
+		<meta charset="utf-8">
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>                     
+	</head>
+	
+	<body>
+
+		<div id="like_button_container"></div>
+	
+        <script>
+
+			const X = React.createElement; //"elements" are the smallest building blocks of React apps. An element describes what you want
+			//to see on the screen. 
+
+			//"Component" is a class or function which optionally accepts inputs and returns an "element"
+
+			class likeButton extends React.Component{ //"extends" keyword is used to create a child class of a parent class. The child
+			//inherits all the methods from another class. This is useful for code reusability. 
+				constructor(props) {  //"constructor" creates an object within the Class "likeButton". The parameter is the user input (props)
+					super(props); //"props" is the input. "Super" (JS keyword) calls the constructor ie tells computer to make the object
+					this.state = {liked: false}; //specifies the state of the object to be set at "false". ie the like button is set to false. 
+				}
+
+				render(){ //this method describes to the browser the view to be rendered
+					if (this.state.liked){ //if the state of the object is "Liked"
+						return 'You clicked the like button !'; //display this string on the screen
+					}
+
+					return X (
+						'button',
+						{onClick: () => this.setState({liked: true}) }, //"setstate" schedules a UI update if the liked button is pressed
+						'Like' //this displays "Like" on the button.
+					);
+				}
+			}
+
+			const domContainer = document.querySelector('#like_button_container'); //HTML DOM querySelector() method. It gets the first element
+			// in the document with the id "like_button_container"
+			ReactDOM.render(X(likeButton), domContainer);// Render function takes two arguments, the HTML code, and the HTML element. In our case
+			// the first is "You clicked the like button", and the second is the element with the id "like_button_container". In other words display
+			// "You clicked the like button".
+
+        </script>
+	</body>
+	
+</html>

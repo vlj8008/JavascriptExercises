@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p id="demo"></p>
+
+<h2>Convert a JavaScript object into a JSON string, and display in the HTML document.</h2>
+
+<script>
+var myObj = { "name":"John", "age":31, "city":"New York" };//key value pairs
+var myJSON = JSON.stringify(myObj);//using the stringify method to turn the object in to a string which 
+//can be easily transported.
+document.getElementById("demo").innerHTML = myJSON; //"window" object represents the browser window. 
+</script>
+
+</body>
+</html>

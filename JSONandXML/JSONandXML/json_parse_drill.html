@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p id="dog"></p>
+
+<h2>Using JSON parse method to take the JSON string and convert back to a JS object.</h2>
+
+<script>
+var dog = '{ "name":"Dax", "breed":"dalmation", "color":"white" }';//this is json string variable
+var myJSONstring = JSON.parse(dog);//using the parse method to turn JSON string in to JS object.
+document.getElementById("dog").innerHTML = myJSONstring.name + " the " + myJSONstring.breed; //"window" object represents the browser window. 
+</script>
+
+</body>
+</html>

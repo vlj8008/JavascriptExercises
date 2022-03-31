@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+    <script>
+
+        //jQuery Event:
+        $(document).ready(function(){ //when the DOM has been loaded make the following function available. 
+            $("p").dblclick(function(){ // when the "p" element as been double clicked
+                $(this).hide(); //hide the current element.
+            });
+        });
+
+        //jQuery Effect:
+        $(document).ready(function(){ //when the DOM has loaded make the following function available. 
+            $("#btn").click(function(){ //when the button element has been clicked
+                $("#box").animate({height: "300px"});//animate the box element by making it increase its height from 100px to 300px
+            });
+        });
+        
+    </script>
+</head>
+
+<body>
+
+    <p>Double click on me and I will go away.</p>
+
+    <p>Do the same for this line</p>
+
+    <div>This line will not work as it is not a "p" element.</div>
+
+    <button id="btn">Animate height</button>
+
+    <div id="box" style="background: lightcoral; height: 100px; width: 100px; margin: 6px;"></div>
+</body>
+
+</html>
+
+
+            
